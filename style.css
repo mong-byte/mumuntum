@@ -1,0 +1,178 @@
+@import "reset.css";
+
+body {
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Greeting */
+.js-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.js-form span {
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+
+.js-form input {
+  font-size: 25px;
+  background: none;
+  color: white;
+  text-align: center;
+  border: none;
+  padding-bottom: 5px;
+  border-bottom: 2px solid white;
+}
+
+.js-form input:focus {
+  outline: none;
+  border-bottom: 2px solid wheat;
+  transition: 0.5s ease-in-out border-bottom;
+}
+
+.js-form_name {
+  margin-top: 100px;
+  margin-bottom: 80px;
+  font-size: 50px;
+}
+/* ToDoList */
+
+.js-todo_form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 30px;
+}
+
+.js-todo_form span {
+  margin-bottom: 20px;
+}
+
+.js-todo_form input {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  background: none;
+  border: none;
+  border-bottom: 2px solid white;
+}
+
+.js-todo_form input:focus {
+  outline: none;
+  border-bottom: 2px solid wheat;
+  transition: 0.5s ease-in-out border-bottom;
+}
+
+.js-form,
+.js-form_name {
+  display: none;
+}
+
+.showing {
+  display: flex;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.bgImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+}
+
+.list-wrapper {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  right: 20px;
+  width: 20%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pending-container,
+.finished-container {
+  height: 40%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pending-container {
+  margin-top: 20px;
+}
+
+.finished-container {
+  margin-bottom: 20px;
+}
+
+.pending-container h3,
+.finished-container h3 {
+  margin-top: 20px;
+  font-size: 32px;
+}
+
+.pending-list,
+.finished-list {
+  margin: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.pending-list li,
+.finished-list li {
+  margin: 0px 15px;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.pending-list li button,
+.finished-list li button {
+  margin-right: 5px;
+  background: none;
+  border-radius: 5px;
+  color: white;
+}
+
+/* Clock */
+
+.js-clock {
+  display: flex;
+  align-items: flex-end;
+}
+
+.js-clock h4 {
+  font-size: 180px;
+}
+
+.js-clock h5 {
+  font-size: 25px;
+}

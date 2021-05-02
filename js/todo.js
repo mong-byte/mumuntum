@@ -4,7 +4,7 @@ const pendingList = document.querySelector(".pending-list");
 const finishedList = document.querySelector(".finished-list");
 
 const PENDING_LS = "PENDING";
-const FINISED_LS = "FINISHED";
+const FINISHED_LS = "FINISHED";
 
 let pending = [];
 let finished = [];
@@ -21,7 +21,7 @@ function moveToPending(event) {
   const cleanToDos = finished.filter((todo) => {
     return todo.id !== parseInt(li.id);
   });
-  finised = cleanToDos;
+  finished = cleanToDos;
   saveFinished();
 }
 
@@ -64,7 +64,7 @@ function deletePending(event) {
 }
 
 function saveFinished() {
-  localStorage.setItem(FINISED_LS, JSON.stringify(finished));
+  localStorage.setItem(FINISHED_LS, JSON.stringify(finished));
 }
 
 function savePending() {
@@ -77,8 +77,8 @@ function paintFinished(text) {
   const passBtn = document.createElement("button");
   const span = document.createElement("span");
   const newId = finished.length + 1;
-  delBtn.innerText = "❌";
-  passBtn.innerText = "✖";
+  delBtn.innerText = "Done";
+  passBtn.innerText = "Back";
   delBtn.addEventListener("click", deleteFinished);
   passBtn.addEventListener("click", moveToPending);
   span.innerText = text;
@@ -101,8 +101,8 @@ function paintPending(text) {
   const checkBtn = document.createElement("button");
   const span = document.createElement("span");
   const newId = pending.length + 1;
-  delBtn.innerHTML = "❌";
-  checkBtn.innerHTML = "✔";
+  delBtn.innerText = "Delete";
+  checkBtn.innerText = "Done";
   delBtn.addEventListener("click", deletePending);
   checkBtn.addEventListener("click", moveToFinished);
   span.innerHTML = text;
@@ -128,7 +128,7 @@ function handleSubmit(event) {
 
 function loadToDos() {
   const loadedPending = localStorage.getItem(PENDING_LS);
-  const loadedFinished = localStorage.getItem(FINISED_LS);
+  const loadedFinished = localStorage.getItem(FINISHED_LS);
   if (loadedPending) {
     const parsedPending = JSON.parse(loadedPending);
     parsedPending.forEach((todo) => {
